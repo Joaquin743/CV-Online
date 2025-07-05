@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joaquín Salazar -Estudiante de Ingeniería de Sistemas</title>
+  <style>
+    :root {
+      --color-primario: #3498db;
+      --color-secundario: #2c3e50;
+      --color-claro: #ecf0f1;
+      --color-texto: #333;
+      --color-fondo: #f9f9f9;
+      --sombra: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--color-fondo);
+      color: var(--color-texto);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--color-primario);
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--color-secundario);
+    }
+
+    .contenedor {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: white;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--color-secundario);
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--color-primario);
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--color-primario);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--color-secundario);
+      transform: translateY(-2px);
+    }
+
+    header {
+      background-color: var(--color-secundario);
+      color: white;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--sombra);
+    }
+
+    .nav-contenedor {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 30px;
+    }
+
+    nav ul li a {
+      color: white;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      color: var(--color-primario);
+    }
+
+    #hero {
+      height: 100vh;
+      background-color: var(--color-secundario);
+      color: white;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding-top: 80px;
+      background-image: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)),
+        url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-contenido {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-contenido h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-contenido p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    #sobremi, #habilidades, #intereses {
+      background-color: white;
+    }
+
+    .sobremi-contenido {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .sobremi-texto {
+      flex: 1;
+    }
+
+    .sobremi-imagen {
+      flex: 1;
+      text-align: center;
+    }
+
+    .sobremi-imagen img {
+      width: 120px;
+      opacity: 0.7;
+    }
+
+    .proyectos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .proyecto-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+      transition: transform 0.3s ease;
+    }
+
+    .proyecto-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .proyecto-imagen img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .proyecto-contenido {
+      padding: 20px;
+    }
+
+    .contacto-info {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .email, .telefono {
+      font-size: 1.2rem;
+      margin: 15px 0;
+      display: block;
+    }
+
+    ul {
+      margin-top: 15px;
+      padding-left: 20px;
+    }
+
+    footer {
+      background-color: var(--color-secundario);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    @media (max-width: 768px) {
+      .sobremi-contenido {
+        flex-direction: column;
+      }
+
+      .hero-contenido h1 {
+        font-size: 2.5rem;
+      }
+
+      .proyectos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="contenedor nav-contenedor">
+    <div class="logo">Joaquín Salazar</div>
+    <nav>
+      <ul>
+        <li><a href="#sobremi">Sobre mí</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="hero-contenido">
+    <h1>Andres Joaquin Salazar</h1>
+    <p>Estudiante de Ingeniería de Sistemas con experiencia en logística, inventario y atención al cliente.</p>
+    <p>Actualmente en formación en desarrollo web front-end, combinando conocimientos de backend con tecnologías como HTML y CSS.</p>
+    <a href="#proyectos" class="btn">Ver mis proyectos</a>
+  </div>
+</section>
+
+<section id="sobremi" class="contenedor">
+  <h2>Sobre mí</h2>
+  <div class="sobremi-contenido">
+    <div class="sobremi-texto">
+      <p>En constante aprendizaje en el desarrollo de software de escritorio con C# y SQL Server, creando soluciones prácticas y funcionales.</p>
+      <p>Me considero proactivo, disciplinado y con gran capacidad de adaptación.</p>
+    </div>
+    <div class="sobremi-imagen">
+      <img src="https://img.icons8.com/ios-filled/100/monitor.png" alt="Ilustración de perfil">
+    </div>
+  </div>
+</section>
+
+<section id="habilidades" class="contenedor">
+  <h2>Habilidades Técnicas</h2>
+  <ul>
+    <li>C# y WinForms</li>
+    <li>SQL Server y diseño de bases de datos</li>
+    <li>HTML y CSS básico</li>
+  </ul>
+</section>
+
+<section id="intereses" class="contenedor">
+  <h2>Intereses</h2>
+  <ul>
+    <li>Automatización de procesos</li>
+    <li>Desarrollo de interfaces intuitivas</li>
+    <li>Optimización de sistemas de gestión</li>
+  </ul>
+</section>
+
+<section id="proyectos" class="contenedor">
+  <h2>Mis Proyectos</h2>
+  <div class="proyectos-grid">
+
+    <div class="proyecto-card">
+      <div class="proyecto-imagen">
+        <img src="SistemaVentas.png" alt="Sistema de Ventas">
+      </div>
+      <div class="proyecto-contenido">
+        <h3>Sistema de Ventas</h3>
+        <p>Gestión de ventas, inventario y reportes con C# y SQL Server.</p>
+        <a href="https://github.com/Joaquin743/SistemaVentas" class="btn">Ver código</a>
+      </div>
+    </div>
+
+    <div class="proyecto-card">
+      <div class="proyecto-imagen">
+        <img src="Calculadora.png" alt="Calculadora de Facturas">
+      </div>
+      <div class="proyecto-contenido">
+        <h3>Calculadora de Facturas</h3>
+        <p>App WinForms para calcular IVA y subtotales.</p>
+        <a href="https://github.com/Joaquin743/CalculadoraIva" class="btn">Ver código</a>
+      </div>
+    </div>
+
+    <div class="proyecto-card">
+      <div class="proyecto-imagen">
+        <img src="AgendaTareas.png" alt="Agenda de Tareas">
+      </div>
+      <div class="proyecto-contenido">
+        <h3>Agenda de Tareas</h3>
+        <p>Gestor de tareas con interfaz interactiva y filtros.</p>
+        <a href="https://github.com/Joaquin743/AgendaPersonal" class="btn">Ver código</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contacto" class="contenedor">
+  <h2>Contacto</h2>
+  <div class="contacto-info">
+    <p>¿Quieres hablar más sobre mis proyectos? Puedes contactarme por:</p>
+    <span class="email">📧 joaquinsalazars743@gmail.com</span>
+    <span class="telefono">📱WhatsApp: +591 75543718 </span>
+    <p></p>
+  </div>
+</section>
+
+<footer>
+  <div class="contenedor">
+    <p>&copy; 2025 Joaquín Salazar. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+</body>
+</html>
